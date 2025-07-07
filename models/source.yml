@@ -1,0 +1,52 @@
+version: 2
+sources:
+  - name: Snowflake_Date
+    database: "{{'PROJECT_SALES'}}"
+    schema: raw_schema
+    tables:
+      - name: RAW_CUSTOMER
+        columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not null
+          - name: c_name
+            tests:
+              - not null
+      - name: RAW_CUSTOMER_NATION
+      - name: RAW_LINEITEM
+        columns:
+          - name: l_orderkey
+            tests:
+              - not null
+          - name: l_quantity
+            tests:
+              - not null
+          - name: l_linenumber
+            tests:
+              - not null
+      - name: RAW_NATION
+        columns:
+          - name: n_nationkey
+            tests:
+              - unique
+              - not null
+          - name: n_name
+            tests:
+              - not null
+      - name: RAW_ORDER
+        columns:
+          - name: o_orderkey
+            tests:
+              - unique
+              - not null
+      - name: RAW_PART
+      - name: RAW_PARTSUPP
+      - name: RAW_REGION
+      - name: RAW_SUPPLIER
+  - name: snapshot_tables
+    database: "{{('DBT_PROJECT')}}"
+    schema: DWH
+    tables:
+      - name: snap_ordersdetails
+        

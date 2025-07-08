@@ -1,5 +1,6 @@
 {% snapshot snap_ordersdetails %}
 {{config(
+target_schema='DWH',
 strategy='check',
 unique_key = 'order_key',
 check_cols=['order_status','order_total','order_date','order_month','order_unique_items',

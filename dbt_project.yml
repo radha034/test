@@ -45,4 +45,4 @@ models:
     confirmed:
       +materialized: table
     snapshots:
-      +materialized: table
+      +target_schema: DWH

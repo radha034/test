@@ -44,9 +44,14 @@ sources:
       - name: RAW_PARTSUPP
       - name: RAW_REGION
       - name: RAW_SUPPLIER
+      - name: RAW_CUSTOMERDATA
+      - name: RAW_ORDER_DATA
+      - name: CUSTOMERS
   - name: snapshot_tables
     database: "{{('DBT_PROJECT')}}"
     schema: DWH
     tables:
       - name: snap_ordersdetails
+      
+  
         
